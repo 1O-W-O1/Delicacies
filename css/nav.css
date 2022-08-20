@@ -1,0 +1,166 @@
+/* CSS Document */
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-famliy: DFKai-sb, sans-serif;
+	font-size: 28px;
+}
+body
+{
+	display: flex;
+	justify-content: top;
+	align-items: top;
+	min-height: 100vh;
+	background: #3e3f46;
+}
+ul
+{
+	position: relative;
+	transform: skewY(0deg);
+	/*padding:40px 25px;*/
+}
+ul li:not(.dropdown)
+{
+	position: relative;
+	list-style: none;
+	width: 200px;
+	background: #3e3f46;
+	padding: 25px 0px;
+	z-index: none;
+	transition: 0.5s;
+}
+ul li:not(.dropdown):hover
+{
+	background: #33a3ee;
+	transform: translate(25px,25px);
+}
+ul li:not(.dropdown)::before
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -40px;
+	width: 40px;
+	height: 100%;
+	background: #2e3133;
+	transform-origin: right;
+	transform: skewY(45deg);
+	transition: 0.5s;
+}
+ul li:not(.dropdown):hover::before
+{
+	background: #1f5378;
+}
+ul li:not(.dropdown)::after
+{
+	content: '';
+	position: absolute;
+	top: -40px;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	background: #35383e;
+	transform-origin: bottom;
+	transform: skewX(45deg);
+	transition: 0.5s;
+}
+ul li:not(.dropdown):hover::after
+{
+	background: #2982b9;
+	box-shadow: -120px 120px 20px rgba(0,0,0,0.25);
+}
+ul a
+{
+	text-decoration: none;
+	text-align: center;
+	color: #CCC;
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	transition: 0.1s;
+}
+ul a:hover
+{
+	color: #fff;
+	font-weight: bold;
+}
+/*-------------------------------------------------------------------------------------------------------------*/
+ul li ul.dropdown
+{
+	min-width: 100%;
+	display: none;
+	position: absolute;
+	padding: 25px 0px;
+	left: 0;
+	transition: 0.5s;
+}
+ul li:hover ul.dropdown
+{
+	display: block;
+}
+ul li ul.dropdown li
+{
+	padding: 20px 0px;
+	width: 200px;
+	background: #2982b9;
+	display: block;
+	transform: translateX(-15px);
+	transition: 0.5s;
+}
+ul li ul.dropdown li:hover
+{
+	background: #33a3ee;
+}
+ul li ul.dropdown li::before
+{
+	content: '';
+	position: absolute;
+	top: -15px;
+	left: -40px;
+	width: 40px;
+	height: 125%;
+	background: #1f5378;
+	transform-origin: right;
+	transform: skewY(45deg);
+	transition: 0.5s;
+}
+ul li ul.dropdown li#First::after
+{
+	content: '';
+	position: absolute;
+	top: -15px;
+	left: -0px;
+	width: 0;
+	height: 0;
+	border-bottom: 15px solid #2982b9;
+	border-right: 15px solid transparent;
+}
+ul li ul.dropdown li#First::after:hover
+{
+	border-bottom: 15px solid #33a3ee;
+}
+/*------------------------------------------------------------------------------------------*/
+a.mail
+{
+	font-size: 24px;
+	line-height: 40px;
+	text-decoration: none;
+	text-align: center;
+	color: #CCC;
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	transition: 0.1s;
+}
+a.mail:hover
+{
+	color: #fff;
+	font-weight: bold;
+}
+/*--------------------------------------------------------------------------------------------*/
+.disable
+{
+	pointer-events: none;
+}
